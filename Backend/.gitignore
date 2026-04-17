@@ -1,0 +1,34 @@
+# -----------------------------
+# 1. DEPENDENCIES
+# -----------------------------
+node_modules/
+package-lock.json 
+
+# -----------------------------
+# 2. SECRETS & ENVIRONMENT
+# -----------------------------
+.env
+.env.local
+.env.development
+.env.production
+
+# -----------------------------
+# 3. BUILD ARTIFACTS
+# -----------------------------
+
+dist/
+build/
+
+# -----------------------------
+# 4. OS JUNK FILES
+# -----------------------------
+
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# 5. LOGS
+# -----------------------------
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
