@@ -1,9 +1,12 @@
-# 🔒 SecureChat: End-to-End Encrypted Real-Time Chat
+# 🔒 NexChat: End-to-End Encrypted Real-Time Chat
 
-A highly secure, real-time messaging application featuring End-to-End Encryption (E2EE) for both text messages and media files. Built with the MERN stack and powered by the native WebCrypto API, this application ensures that only the sender and the intended recipient can read the messages or view the images.
+A highly secure, real-time messaging application featuring End-to-End Encryption (E2EE) for both text messages and media files. Built with the MERN stack and powered by the native WebCrypto API and Socket.io, this application ensures that only the sender and the intended recipient can read the messages or view the images instantly.
+
+## 🔗 Live Demo:
+https://nexchat-035o.onrender.com/
 
 ## 🚀 Overview
-Privacy is paramount. Unlike standard chat applications where messages are stored in plain text on the server, this application mathematically scrambles your text and images directly in the browser *before* they are sent over the network. The server acts strictly as a "blind" storage locker and never has access to the cryptographic keys required to decrypt your data.
+Unlike standard chat applications where messages are stored in plain text on the server, this application mathematically scrambles your text and images directly in the browser *before* they are sent over the network. The server acts strictly as a "blind" storage locker and never has access to the cryptographic keys required to decrypt your data.
 
 ## ✨ Key Features
 
@@ -11,9 +14,10 @@ Privacy is paramount. Unlike standard chat applications where messages are store
 * **E2EE Image Sharing:** Compresses and encrypts images into binary buffers before uploading them safely to the cloud.
 * **Real-Time Communication:** Instant message delivery and UI updates powered by Socket.io.
 * **Zero-Knowledge Backend:** The MongoDB database and Cloudinary storage only hold encrypted gibberish and Initialization Vectors (IVs).
+* **Secure Authentication:** JWT-based user Login/ SignUp authentication with HTTP-only cookies.
 * **Optimistic UI Updates:** Instant visual feedback when sending messages for a snappy user experience.
-* **Secure Authentication:** JWT-based user authentication with HTTP-only cookies.
 * **Responsive Design:** A beautiful, modern UI that works flawlessly on desktop and mobile.
+* **Deployment:** Complete Frontend and Backend deployment on Render.
 
 ## 🛠️ Tech Stack
 
