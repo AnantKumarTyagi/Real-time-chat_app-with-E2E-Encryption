@@ -1,6 +1,6 @@
 # 🔒 NexChat: End-to-End Encrypted Real-Time Chat
 
-A highly secure, real-time messaging application featuring End-to-End Encryption (E2EE) for both text messages and media files. Built with the MERN stack and powered by the native WebCrypto API and Socket.io, this application ensures that only the sender and the intended recipient can read the messages or view the images instantly.
+A highly secure, **real-time messaging application** featuring **End-to-End Encryption (E2EE)** for both text messages and media files. Built with the MERN stack and powered by the native **WebCrypto API and Socket.io**, this application ensures that only the sender and the intended recipient can read the messages or view the images instantly.
 
 ## 🔗 Live Demo:
 https://nexchat-035o.onrender.com/
@@ -10,13 +10,15 @@ Unlike standard chat applications where messages are stored in plain text on the
 
 ## ✨ Key Features
 
-* **End-to-End Text Encryption:** Utilizes the WebCrypto API (AES-GCM) to encrypt and decrypt messages natively in the browser.
+* **End-to-End Text Encryption:** Utilizes the **WebCrypto API (AES-GCM)** to **encrypt and decrypt** messages natively in the browser.
 * **E2EE Image Sharing:** Compresses and encrypts images into binary buffers before uploading them safely to the cloud.
-* **Real-Time Communication:** Instant message delivery and UI updates powered by Socket.io.
+* **PIN-encrypted key vault:** Build a PIN encrypted key vault, so that the user can unlock their chats by entering a PIN and can reset their PIN.
+* **Multi-Device Support:** User can Login and unlock their chats on a new device by entering PIN in key vault(No need on same device).
+* **Real-Time Communication:** Instant message delivery and UI updates powered by **Socket.io**.
 * **Zero-Knowledge Backend:** The MongoDB database and Cloudinary storage only hold encrypted gibberish and Initialization Vectors (IVs).
 * **Secure Authentication:** JWT-based user Login/ SignUp authentication with HTTP-only cookies.
 * **Optimistic UI Updates:** Instant visual feedback when sending messages for a snappy user experience.
-* **Responsive Design:** A beautiful, modern UI that works flawlessly on desktop and mobile.
+* **Responsive Design:** A beautiful UI build with TailwindCSS and Lucide icons that works flawlessly on desktop and mobile.
 * **Deployment:** Complete Frontend and Backend deployment on Render.
 
 ## 🛠️ Tech Stack
@@ -43,6 +45,14 @@ Unlike standard chat applications where messages are stored in plain text on the
 3. **Text Processing:** Messages are encrypted using AES-GCM, generating a unique Initialization Vector (IV) and a ciphertext string.
 4. **Image Processing:** Images are converted to a file, heavily compressed, and then run through the AES-GCM encryption engine. The resulting binary blob is uploaded to Cloudinary as a raw `.txt` or `.bin` file to bypass image processing.
 5. **Decryption:** The recipient's frontend pulls the encrypted payloads and IVs from the database/Cloudinary and reverses the math using their derived `sharedKey`.
+
+## 🛡️ Challenges Overcome:
+* Build a **PIN-encrypted key vault** to securely sync private keys across devices without breaking the zero-knowledge backend.
+* Maintained snappy, **optimistic UI updates via Socket.io** while waiting for heavy **client-side cryptographic processes** to finish.
+* **Overcame browser performance limits** by **converting large images into binary buffers** for native WebCrypto encryption before cloud upload.
+* Handling **preflight(OPTIONS)** request failures.
+* Fixing complex **CORS header** misconfigurations.
+* Debugging for production ready application(Render) and fixing deployment issues.
 
 ## ⚙️ Installation & Setup
 
